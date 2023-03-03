@@ -1,0 +1,101 @@
+<table *ngIf="this.showExtra" class="table">
+  <thead>
+    <tr>
+      <th scope="col">Big 5</th>
+      <th scope="col" *ngFor="let date of table.date.slice(-10)">{{ date }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Revenue</th>
+      <td *ngFor="let rev of table.revenue.slice(-10)">{{ rev }}</td>
+    </tr>
+    <tr>
+      <th scope="row">EPS</th>
+      <td *ngFor="let eps of table.eps.slice(-10)">{{ eps }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Net Income</th>
+      <td *ngFor="let net of table.netIncome.slice(-10)">{{ net }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Net Debt</th>
+      <td *ngFor="let debt of table.netDebt.slice(-10)">{{ debt }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Total Equity</th>
+      <td *ngFor="let eq of table.totalEquity.slice(-10)">{{ eq }}</td>
+    </tr>
+    <tr>
+      <th scope="row">ROIC</th>
+      <td *ngFor="let ro of table.roic.slice(-10)">{{ ro }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Big 5</th>
+      <th scope="col" *ngFor="let date of table.changeDates.slice(-10)">
+        {{ date }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Revenue</th>
+      <td
+        [ngClass]="getValidChangeClass(rev)"
+        *ngFor="let rev of table.revenueChange.slice(-10)"
+      >
+        {{ rev }}
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">EPS</th>
+      <td
+        [ngClass]="getValidChangeClass(eps)"
+        *ngFor="let eps of table.epsChange.slice(-10)"
+      >
+        {{ eps }}
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Net Income</th>
+      <td
+        [ngClass]="getValidChangeClass(net)"
+        *ngFor="let net of table.netIncomeChange.slice(-10)"
+      >
+        {{ net }}
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Net Debt</th>
+      <td
+        [ngClass]="getValidChangeClass(debt)"
+        *ngFor="let debt of table.netDebtChange.slice(-10)"
+      >
+        {{ debt }}
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Total Equity</th>
+      <td
+        [ngClass]="getValidChangeClass(eq)"
+        *ngFor="let eq of table.totalEquityChange.slice(-10)"
+      >
+        {{ eq }}
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">ROIC Change</th>
+      <td
+        [ngClass]="getValidChangeClass(ro)"
+        *ngFor="let ro of table.roicChange.slice(-10)"
+      >
+        {{ ro }}
+      </td>
+    </tr>
+  </tbody>
+</table>

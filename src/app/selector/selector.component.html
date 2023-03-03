@@ -1,0 +1,32 @@
+<form>
+  <div class="form-group">
+    <label for="text">Ticker</label>
+    <input
+      type="text"
+      id="ticker"
+      class="form-control"
+      name="tick"
+      [(ngModel)]="ticker"
+      placeholder="Enter ticker"
+    />
+  </div>
+
+  <div class="row mt-2">
+    <div class="col">
+      <button
+        type="get-big-five"
+        class="btn btn-primary border"
+        (click)="onGetBigFive()"
+      >
+        Get The Big Five
+      </button>
+      <button
+        type="show-background-data"
+        class="btn btn-danger border"
+        (click)="onToggleExtraData()"
+      >
+        Toggle Background Data
+      </button>
+    </div>
+  </div>
+</form>
